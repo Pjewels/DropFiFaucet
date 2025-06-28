@@ -1,0 +1,513 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Background Logos */
+.background-logos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bg-logo {
+    position: absolute;
+    opacity: 0.1;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease;
+}
+
+.bg-logo-1 {
+    top: 5%;
+    left: 50%;
+    width: 180px;
+    height: auto;
+    transform: translateX(-50%) rotate(-8deg);
+}
+
+.bg-logo-2 {
+    top: 25%;
+    right: 8%;
+    width: 160px;
+    height: auto;
+    transform: rotate(15deg);
+}
+
+.bg-logo-3 {
+    top: 30%;
+    left: 5%;
+    width: 150px;
+    height: auto;
+    transform: rotate(-12deg);
+}
+
+.bg-logo-4 {
+    bottom: 20%;
+    right: 5%;
+    width: 170px;
+    height: auto;
+    transform: rotate(-10deg);
+}
+
+.bg-logo-5 {
+    bottom: 25%;
+    left: 8%;
+    width: 155px;
+    height: auto;
+    transform: rotate(18deg);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faucet-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faucet-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.network-badge {
+    background-color: #f1f5f9;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid #d1d5db;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 60px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%) 1;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    min-height: 350px;
+    position: relative;
+}
+
+.telegram-icon {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.telegram-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(34, 158, 217, 0.2));
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Button Styles */
+.btn {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary svg {
+    width: 16px;
+    height: 16px;
+    color: #6b7280;
+}
+
+.btn-disabled {
+    background-color: #c7d2fe;
+    color: #a5b4fc;
+    border-color: #c7d2fe;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Chain Selection */
+.chain-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.chain-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    gap: 8px;
+}
+
+.chain-option:hover {
+    background-color: #f8fafc;
+}
+
+.chain-option.selected {
+    border-color: #3b82f6;
+    background-color: #f0f7ff;
+}
+
+.chain-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.monad-icon {
+    background: transparent;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    width: 80px;
+    height: 48px;
+}
+
+.chain-logo {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.chain-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Input Section */
+.input-section {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.input-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.address-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.address-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.address-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Success Message */
+.success-message {
+    margin-top: 24px;
+    padding: 20px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.success-text {
+    font-size: 14px;
+    color: #15803d;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.tx-hash {
+    font-size: 12px;
+    color: #6b7280;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    word-break: break-all;
+}
+
+.tx-link {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tx-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Footer */
+.footer {
+    padding: 24px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.disclaimer {
+    color: #6b7280;
+    font-size: 14px;
+    text-align: left;
+    flex: 1;
+    margin: 0;
+}
+
+.developer-credit {
+    color: #6b7280;
+    font-size: 14px;
+    text-align: right;
+    flex: 1;
+    margin: 0;
+}
+
+.developer-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.developer-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .header {
+        padding: 20px 0;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 32px 24px;
+        margin: 0 16px;
+    }
+    
+    .telegram-logo {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .network-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .disclaimer,
+    .developer-credit {
+        text-align: center;
+    }
+
+    /* Adjust background logos for mobile */
+    .bg-logo-1 {
+        width: 120px;
+        top: 4%;
+        left: 50%;
+        transform: translateX(-50%) rotate(-8deg);
+    }
+    
+    .bg-logo-2 {
+        width: 110px;
+        top: 22%;
+        right: 5%;
+    }
+    
+    .bg-logo-3 {
+        width: 100px;
+        top: 28%;
+        left: 3%;
+    }
+    
+    .bg-logo-4 {
+        width: 115px;
+        bottom: 22%;
+        right: 3%;
+    }
+    
+    .bg-logo-5 {
+        width: 105px;
+        bottom: 28%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 24px 20px;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+} 
